@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">BNI Test</string>
+    <string name="not_found">Not Found</string>
+    <string name="pay">Pay</string>
+    <string name="payment_success">Payment Successfully</string>
+    <string name="history_not_found">History Not Found</string>
+</resources>

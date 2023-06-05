@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.bnitest.view.home.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_promoDetailFragment"
+            app:destination="@id/promoDetailFragment" />
+    </fragment>
+    <fragment
+        tools:layout="@layout/fragment_payment"
+        android:id="@+id/paymentFragment"
+        android:name="com.example.bnitest.view.payment.PaymentFragment"
+        android:label="PaymentFragment" />
+    <fragment
+        tools:layout="@layout/fragment_portfolio"
+        android:id="@+id/portfolioFragment"
+        android:name="com.example.bnitest.view.portfolio.PortfolioFragment"
+        android:label="PortfolioFragment" >
+        <action
+            android:id="@+id/action_portfolioFragment_to_portfolioDetailFragment"
+            app:destination="@id/portfolioDetailFragment" />
+    </fragment>
+    <fragment
+        tools:layout="@layout/fragment_promo_detail"
+        android:id="@+id/promoDetailFragment"
+        android:name="com.example.bnitest.view.promoDetail.PromoDetailFragment"
+        android:label="PromoDetailFragment" >
+        <argument
+            android:name="promo"
+            app:argType="com.example.core.data.promo.PromoResponseItem" />
+        <action
+            android:id="@+id/action_promoDetailFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/portfolioDetailFragment"
+        android:name="com.example.bnitest.view.portfoliodetail.PortfolioDetailFragment"
+        android:label="PortfolioDetailFragment" >
+        <action
+            android:id="@+id/action_portfolioDetailFragment_to_portfolioFragment"
+            app:destination="@id/portfolioFragment" />
+        <argument
+            android:name="portfolio"
+            app:argType="com.example.core.data.portfolio.ChartDataItem" />
+
+    </fragment>
+</navigation>
